@@ -1,7 +1,47 @@
 <script setup>
-const loading = ref(false);
+const items = ref([
+  {
+    title: "Overview",
+    path: "overview",
+  },
+  {
+    title: "Transactions",
+    path: "transactions",
+  },
+  {
+    title: "Account",
+    path: "account",
+  },
+  {
+    title: "Contacts",
+    path: "contacts",
+  },
+  {
+    title: "Settings",
+    path: "settings",
+  },
+]);
 </script>
 
 <template>
-  <div>hello Menu</div>
+  <div>
+    <header
+      class="flex items-center gap-2 hover:scale-[101%] transitions cursor-pointer"
+    >
+      <Logo />
+      <p class="font-bold">Nuxt Finance</p>
+    </header>
+
+    <div class="px-2 grow">
+      <div class="grid gap-2">
+        <div
+          v-for="(item, index) in items"
+          :key="index"
+          class="flex items-center gap-2 px-2 py-1 transition rounded cursor-pointer hover:bg-neutral-100"
+        >
+          <span>{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
