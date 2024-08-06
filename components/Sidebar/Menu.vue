@@ -2,23 +2,28 @@
 const items = ref([
   {
     title: "Overview",
-    path: "overview",
+    path: "/",
+    icon: "ri:dashboard-line",
   },
   {
     title: "Transactions",
-    path: "transactions",
+    path: "/transactions",
+    icon: "lucide:arrow-left-right",
   },
   {
     title: "Account",
-    path: "account",
+    path: "/",
+    icon: "lucide:bolt",
   },
   {
     title: "Contacts",
-    path: "contacts",
+    path: "/",
+    icon: "lucide:square-user-round",
   },
   {
     title: "Settings",
-    path: "settings",
+    path: "/",
+    icon: "lucide:settings",
   },
 ]);
 </script>
@@ -39,6 +44,7 @@ const items = ref([
           :key="index"
           class="flex items-center gap-2 px-2 py-1 transition rounded cursor-pointer hover:bg-neutral-100"
         >
+          <Icon size="20" :name="item.icon" color="black" />
           <span>{{ item.title }}</span>
         </div>
       </div>
